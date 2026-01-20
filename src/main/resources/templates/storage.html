@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Your Sets</title>
+  <style>
+    body{
+      margin:0;
+      background:linear-gradient(135deg,#5f5f5f,#3f3f3f);
+      font-family:"Segoe UI",sans-serif;
+      min-height:100vh;
+    }
+
+    .app{
+      background:#f5f7fb;
+      max-width:900px;
+      margin:50px auto;
+      padding:40px;
+      border-radius:28px;
+      box-shadow:0 20px 40px rgba(0,0,0,.35);
+    }
+
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:30px;
+    }
+
+    h1{font-family:Georgia,serif;margin:0;}
+    .center-header{text-align:center;flex:1;}
+
+    .back{
+      text-decoration:none;
+      font-size:1.1rem;
+      color:#4a6cf7;
+      font-weight:600;
+    }
+
+    .search{
+      margin-top:10px;
+      padding:10px 18px;
+      border-radius:20px;
+      border:1px solid #ccc;
+      width:240px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .set-wrap{
+      position:relative;
+    }
+
+    .set-item{
+      position:relative;
+      background:white;
+      padding:25px;
+      border-radius:18px;
+      text-align:center;
+      text-decoration:none;
+      color:#222;
+      font-weight:600;
+      display:block;
+      box-shadow:0 6px 15px rgba(0,0,0,.15);
+      transition:.15s;
+    }
+
+    .set-item:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 22px rgba(0,0,0,.25);
+    }
+
+    .delete-btn{
+      position:absolute;
+      top:10px;
+      right:12px;
+      background:none;
+      border:none;
+      color:#e74c3c;
+      font-size:20px;
+      font-weight:bold;
+      cursor:pointer;
+      display:none;
+      line-height:1;
+    }
+
+    .set-wrap:hover .delete-btn{
+      display:block;
+    }
+
+    .delete-btn:hover{
+      color:#ff0000;
+      transform:scale(1.2);
+    }
+  </style>
+</head>
+
+<body>
+<div class="app">
+
+  <div class="top">
+    <a class="back" href="/">← Home</a>
+
+    <div class="center-header">
+      <h1>Your Sets</h1>
+      <input id="search" class="search" placeholder="Search..." onkeyup="filterSets()">
+    </div>
+
+    <a class="back" href="/create">+
+

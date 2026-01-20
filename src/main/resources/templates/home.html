@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Test Cards</title>
+    <style>
+        body {
+            margin:0;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#5f5f5f,#3f3f3f);
+            font-family:"Segoe UI",sans-serif;
+        }
+
+        .box {
+            background:#f5f7fb;
+            width:520px;
+            padding:50px 40px;
+            border-radius:28px;
+            text-align:center;
+            box-shadow:0 20px 40px rgba(0,0,0,.35);
+        }
+
+        h1 {
+            font-family:Georgia,serif;
+            font-size:2.5rem;
+            margin-bottom:40px;
+        }
+
+        .btns {
+            display:flex;
+            gap:30px;
+            justify-content:center;
+        }
+
+        a {
+            text-decoration:none;
+            background:#4a6cf7;
+            color:white;
+            padding:16px 30px;
+            border-radius:30px;
+            font-weight:600;
+            transition:.15s;
+        }
+
+        a:hover { background:#3b5be0; }
+        .secondary { background:#2ecc71; }
+        .secondary:hover { background:#27b862; }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>Test Cards</h1>
+
+    <div class="btns">
+        <a href="/storage">My Sets</a>
+        <a class="secondary" href="/create">Create Set</a>
+    </div>
+</div>
+
+</body>
+</html>
